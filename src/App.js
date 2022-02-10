@@ -38,10 +38,10 @@ export default function App() {
             user &&
             <ul>
               <li>
-                <Link to='./list'>List Page</Link>
+                <Link to='/list'>List Page</Link>
               </li>
               <li>
-                <Link to='./create'>Create Page</Link>
+                <Link to='/create'>Create Page</Link>
               </li>
               <li>
                 <button onClick={ logout }>Logout</button>
