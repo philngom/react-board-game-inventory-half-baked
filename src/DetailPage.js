@@ -13,7 +13,7 @@ export default function DetailPage() {
       setGame(fetchedGame);
     }
     fetch();
-  }, []);
+  }, [params.id]);
 
   return (
     <div className='detail'>
