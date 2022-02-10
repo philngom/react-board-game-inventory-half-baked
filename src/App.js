@@ -27,7 +27,7 @@ export default function App() {
       setUser(user);
     }
     fetchUser();
-  }, [user]);
+  }, []);
 
 
   async function handleLogout() {
@@ -46,7 +46,7 @@ export default function App() {
             user &&
             <ul>
               <li>
-                <Link to='/list'>List Page</Link>
+                <Link to='/board-games'>List Page</Link>
               </li>
               <li>
                 <Link to='/create'>Create Page</Link>
@@ -63,7 +63,7 @@ export default function App() {
               {/* if there is a user, redirect to the board games list. Otherwise, render the auth page. Note that the AuthPage will need a function called setUser that can set the user state in App.js */}
               {
                 user
-                  ? <Redirect to='/list' />
+                  ? <Redirect to='/board-games' />
                   : <AuthPage setUser={ setUser }/>
               }
             </Route>

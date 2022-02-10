@@ -23,12 +23,12 @@ export default function CreatePage() {
       genre,
       designer,
       description,
-      minPlayers,
-      maxPlayers
+      min_players: minPlayers,
+      max_players: maxPlayers
     });
 
     // use history.push to send the user to the list page
-    history.push('/list');
+    history.push('/board-games');
   }
 
   return (
