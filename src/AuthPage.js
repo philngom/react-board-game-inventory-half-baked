@@ -34,7 +34,7 @@ export default function AuthPage({ setUser }) {
     <div className='auth'>
       <h1><em>Boardzo</em></h1>
       {/* on submit, sign the user in using the function defined above */}
-      <form onSubmit={(e) => handleSubmit }>
+      <form onSubmit={ handleSubmit }>
         <label>
             Email
           {/* on change, update the form state for email */}

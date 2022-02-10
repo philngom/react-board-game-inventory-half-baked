@@ -24,7 +24,7 @@ export default function App() {
   useEffect(() => {
     async function fetchUser() {
       const user = await getUser();
-      console.log(user);
+      setUser(user);
     }
     fetchUser();
   }, [user]);
@@ -52,7 +52,7 @@ export default function App() {
                 <Link to='/create'>Create Page</Link>
               </li>
               <li>
-                <button onClick={ logout }>Logout</button>
+                <button onClick={ handleLogout }>Logout</button>
               </li>
             </ul>
           }
