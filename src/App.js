@@ -64,7 +64,7 @@ export default function App() {
               {
                 user
                   ? <ListPage />
-                  : <AuthPage setUser={ setUser } />
+                  : <Redirect to='/' />
               }
             </Route>
             <Route exact path="/board-games/:id">
@@ -72,7 +72,7 @@ export default function App() {
               {
                 user
                   ? <DetailPage />
-                  : <AuthPage setUser={ setUser } />
+                  : <Redirect to='/' />
               }
             </Route>
             <Route exact path="/create">
@@ -80,7 +80,7 @@ export default function App() {
               {
                 user
                   ? <CreatePage />
-                  : <AuthPage setUser={ setUser } />
+                  : <Redirect to='/' />
               }
             </Route>
           </Switch>
