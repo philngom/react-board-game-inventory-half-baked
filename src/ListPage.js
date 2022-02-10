@@ -10,9 +10,7 @@ export default function ListPage() {
     async function fetch() {
       const games = await getGames();
       setGames(games);
-      console.log(games);
     }
-    console.log('in useEffect');
     fetch();
   }, []);
 
