@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { signIn, signUp } from './services/fetch-utils.js';
 
-export default function AuthPage(props) {
+export default function AuthPage({ setUser }) {
   // you'll need to track the form state of the email and password
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -10,25 +10,31 @@ export default function AuthPage(props) {
     e.preventDefault();
 
     // sign the user in using the form state
-    await signIn(email, password);
+    const user = await signIn(email, password);
 
     // set the user in App.js state using the correct prop callback. If you did the ternary right in App.js, this should automatically redirect the user to the board game list
+    setUser(user);
   }
 
   async function handleSignUp(e) {
     e.preventDefault();
 
     // sign the user up using the form state
-    await signUp(email, password);
+    const user = await signUp(email, password);
 
     // set the user in App.js state using the correct prop callback. If you did the ternary right in App.js, this should automatically redirect the user to the board game list
+    setUser(user);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
   }
 
   return (
     <div className='auth'>
       <h1><em>Boardzo</em></h1>
       {/* on submit, sign the user in using the function defined above */}
-      <form onSubmit="">
+      <form onSubmit={(e) => handleSubmit }>
         <label>
             Email
           {/* on change, update the form state for email */}
