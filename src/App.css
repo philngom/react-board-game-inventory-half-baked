@@ -54,7 +54,7 @@ a {
 }
 
 
-form { 
+form {
   text-align: right;
   margin: 100px;
 }
@@ -89,4 +89,8 @@ select {
 .detail {
   width: 60%;
   margin: 0 auto;
+}
+
+li {
+  margin: 15px;
 }
