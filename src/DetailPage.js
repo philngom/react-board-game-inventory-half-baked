@@ -6,6 +6,13 @@ export default function DetailPage() {
   const [game, setGame] = useState({});
 
   // on mount, fetch and set in state the correct board game for this id (the id can be found in match.params using the correct react-router hook)
+  useEffect(() => {
+    async function fetch() {
+      const fetchedGame = await getGameById(game.id);
+      setGame(fetchedGame);
+    }
+    fetch();
+  }, []);
 
   return (
     <div className='detail'>
